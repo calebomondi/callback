@@ -10,7 +10,11 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def welcome(request):
     template = loader.get_template('index.html')
-    return HttpResponse(template.render())
+    records = MpesaCB.objects.all()
+    context = {
+        'records':records,
+    }
+    return HttpResponse(template.render(context,request))
 
 def show(request):
     template = loader.get_template('show.html')

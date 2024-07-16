@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mpesa Test</title>
+    <style>
+        table, td,th {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
 </head>
-<body style="display: flex;">
+<body style="display: flex; flex-direction: column;">
     <div class="links">
-        <a href="{% url 'initiate_payment' %}">stk_push</a>
+        <p><a href="{% url 'initiate_payment' %}">stk_push</a></p>
     </div>
-    <div class="links">
-        <a href="{% url 'show' %}">show</a>
+    <div class="tables" style="padding-top: 20px;">
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Time</th>
+                <th>Data</th>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                    <tr>
+                        <td>{{record.id}}</td>
+                        <td>{{record.received_at}}</td>
+                        <td>{{record.data}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
