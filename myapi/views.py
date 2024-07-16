@@ -29,7 +29,7 @@ def initiate_payment(request):
     amount = 1
     account_reference = 'ref101'
     transaction_desc = 'descp'
-    callback_url = 'https://mpesa-eight.vercel.app/callback/'
+    callback_url = 'https://mpesacallback.vercel.app/callback/'
 
     cl = MpesaClient()
     response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
