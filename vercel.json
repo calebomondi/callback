@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "mpesa/wsgi.py",
+        "src": "/mpesa/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "mpesa/wsgi.py"
+            "dest": "/mpesa/wsgi.py"
         }
     ]
 }
