@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <style>
+        table, td,th {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Time</th>
+            <th>Data</th>
+        </thead>
+        <tbody>
+            {% for record in records %}
+                <tr>
+                    <td>{{record.id}}</td>
+                    <td>{{record.received_at}}</td>
+                    <td>{{record.data}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
